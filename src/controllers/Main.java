@@ -16,22 +16,14 @@ import models.User;
 public class Main
 {
   public static void main(String[] args) throws IOException
-  {
-    FileLogger logger = FileLogger.getLogger();
-    logger.log("Creating user list");
-    
-    List<User> users = new ArrayList<User>();
-    users.add(new User("Bart", "Simpson", "bart@simpson.com", "secret"));
-    users.add(new User("Homer", "Simpson", "bart@simpson.com", "secret"));
-    users.add(new User("Lisa", "Simpson", "bart@simpson.com", "secret"));
+  {    
+    MovieReccomenderAPI moviereccomenderAPI = new MovieReccomenderAPI();
+
+    moviereccomenderAPI.createUser("Bart",  "Simpson", "Male",  "Unemployed", 10);
+    moviereccomenderAPI.createUser("Homer", "Simpson", "Male", "Unemployed", 40);
+    moviereccomenderAPI.createUser("Lisa",  "Simpson", "Female", "Unemployed", 11);
+
+    List<User> users = moviereccomenderAPI.getUsers();
     System.out.println(users);
-    
-    logger.log("Serializing contacts to XML");
-    XStream xstream = new XStream(new DomDriver());
-    ObjectOutputStream out = xstream.createObjectOutputStream(new FileWriter("users.xml"));
-    out.writeObject(users);
-    out.close();    
-    
-    logger.log("Finished - shutting down");
   }
 }
