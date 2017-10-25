@@ -1,52 +1,34 @@
 package controllers;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import models.User;
 
-public class MovieReccomenderAPI
-{
-  private List <User> users = new ArrayList<User>();
+public class MovieReccomenderAPI {
+	private Map<String, User> users = new HashMap<>();
 
-  public List<User> getUsers ()
-  {
-    return users;
-  }
+	public Collection<User> getUsers() {
+		return users.values();
+	}
 
-  public  void deleteUsers() 
-  {
-    users.clear();
-  }
+	public void deleteUsers() {
+		users.clear();
+	}
 
-  public User createUser(String firstName, String lastName, String gender, String occupation, int age) 
-  {
-    User user = new User (firstName, lastName, gender, occupation, age);
-    users.add(user);
-    return user;
-  }
+	public User createUser(String firstName, String lastName, String gender,
+			String occupation, int age) {
+		User user = new User(firstName, lastName, gender, occupation, age);
+		users.put(firstName, user);
+		return user;
+	}
 
-  public User getUser(String firstName) 
-  {
-    for (User user : users)
-    {
-      if (firstName.equals(user.firstName))
-        return user;
-    }
-    return null;
-  }
+	public User getUser(String firstName) {
+		return users.get(firstName);
+	}
 
-  public void deleteUser(String firstName) 
-  {
-    User foundUser = null;
-    for (User user : users)
-    {
-      if (firstName.equals(user.firstName))
-        foundUser = user;
-    }
-    if (foundUser != null)
-    {
-      users.remove(foundUser);
-    }
-  }
+	public void deleteUser(String firstName) {
+		users.remove(firstName);
+	}
 }
