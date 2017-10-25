@@ -17,6 +17,13 @@ public class Main {
 				"Unemployed", 11);
 
 		Collection<User> users = moviereccomenderAPI.getUsers();
-		System.out.println(users);
+	    System.out.println(users);
+
+	    User homer = moviereccomenderAPI.getUserByName("Homer");
+	    System.out.println(homer);
+
+	    moviereccomenderAPI.deleteUser(homer.id);
+	    users = moviereccomenderAPI.getUsers();
+	    System.out.println(users);
 	}
 }

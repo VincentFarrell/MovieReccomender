@@ -7,28 +7,37 @@ import java.util.Map;
 import models.User;
 
 public class MovieReccomenderAPI {
-	private Map<String, User> users = new HashMap<>();
+
+	private Map<Long, User> userIndex = new HashMap<>();
+	private Map<String, User> nameIndex = new HashMap<>();
 
 	public Collection<User> getUsers() {
-		return users.values();
+		return userIndex.values();
 	}
 
 	public void deleteUsers() {
-		users.clear();
+		userIndex.clear();
+		nameIndex.clear();
 	}
 
 	public User createUser(String firstName, String lastName, String gender,
 			String occupation, int age) {
 		User user = new User(firstName, lastName, gender, occupation, age);
-		users.put(firstName, user);
+		userIndex.put(user.id, user);
+		nameIndex.put(firstName, user);
 		return user;
 	}
 
-	public User getUser(String firstName) {
-		return users.get(firstName);
+	public User getUserByName(String firstName) {
+		return nameIndex.get(firstName);
 	}
 
-	public void deleteUser(String firstName) {
-		users.remove(firstName);
+	public User getUser(Long id) {
+		return userIndex.get(id);
+	}
+
+	public void deleteUser(Long id) {
+		User user = userIndex.remove(id);
+		nameIndex.remove(user.firstName);
 	}
 }

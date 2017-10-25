@@ -4,6 +4,8 @@ import static com.google.common.base.MoreObjects.toStringHelper;
 import com.google.common.base.Objects;
 
 public class User {
+	static Long counter = 0l;
+	public Long id;
 	public String firstName;
 	public String lastName;
 	public String gender;
@@ -15,6 +17,7 @@ public class User {
 
 	public User(String firstName, String lastName, String gender,
 			String occupation, int age) {
+		this.id = counter++;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.gender = gender;
