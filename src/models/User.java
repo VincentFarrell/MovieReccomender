@@ -1,9 +1,16 @@
 package models;
 
 import static com.google.common.base.MoreObjects.toStringHelper;
+
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.common.base.Objects;
 
 public class User {
+
+	public Map<Long, Activity> activities = new HashMap<>();
+
 	static Long counter = 0l;
 	public Long id;
 	public String firstName;
@@ -15,8 +22,7 @@ public class User {
 	public User() {
 	}
 
-	public User(String firstName, String lastName, String gender,
-			String occupation, int age) {
+	public User(String firstName, String lastName, String gender, String occupation, int age) {
 		this.id = counter++;
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -27,13 +33,12 @@ public class User {
 
 	@Override
 	public String toString() {
-		return toStringHelper(this).addValue(firstName).addValue(lastName)
-				.addValue(gender).addValue(occupation).addValue(age).toString();
+		return toStringHelper(this).addValue(id).addValue(firstName).addValue(lastName).addValue(gender)
+				.addValue(occupation).addValue(age).toString();
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hashCode(this.lastName, this.firstName, this.gender,
-				this.occupation, this.age);
+		return Objects.hashCode(this.lastName, this.firstName, this.gender, this.occupation, this.age);
 	}
 }
