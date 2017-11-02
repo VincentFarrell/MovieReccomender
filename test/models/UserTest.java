@@ -10,7 +10,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class UserTest {
-	private User[] users = { new User("marge", "simpson", "female", "unemployed", 5),
+	private User[] users = { 
+			new User("marge", "simpson", "female", "unemployed", 5),
 			new User("lisa", "simpson", "female", "unemployed", 10),
 			new User("bart", "simpson", "male", "unemployed", 11),
 			new User("maggie", "simpson", "female", "unemployed", 3) };
