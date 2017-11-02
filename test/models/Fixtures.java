@@ -2,6 +2,7 @@ package models;
 
 public class Fixtures {
 	public static User[] users = {
+			new User("homer", "simpson", "male",  "unemployed", 40),
 			new User("marge", "simpson", "female", "unemployed", 35),
 			new User("lisa", "simpson", "female", "unemployed", 11),
 			new User("bart", "simpson", "male", "unemployed", 10),
