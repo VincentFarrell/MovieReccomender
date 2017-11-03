@@ -88,7 +88,7 @@ public class MovieReccomenderAPI {
 
 	
 	
-	public Rating createRating(Long id, Long userID, Long movieID, Double userRating) {
+	public Rating createRating(Long id, Long userID, Long movieID, int userRating) {
 		Rating rating = null;
 		Optional<User> user = Optional.fromNullable(userIndex.get(id));
 		if (user.isPresent()) {

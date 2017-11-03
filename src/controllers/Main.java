@@ -18,15 +18,15 @@ public class Main {
 			movieReccomenderAPI.load();
 		}
 
-		movieReccomenderAPI.createUser("Bart", "Simpson", "Male", "Unemployed", 10);
-		movieReccomenderAPI.createUser("Homer", "Simpson", "Male", "Unemployed", 40);
-		movieReccomenderAPI.createUser("Lisa", "Simpson", "Female", "Unemployed", 11);
+		movieReccomenderAPI.createUser("Bart", "Simpson", "M", "Unemployed", 10);
+		movieReccomenderAPI.createUser("Homer", "Simpson", "M", "Unemployed", 40);
+		movieReccomenderAPI.createUser("Lisa", "Simpson", "F", "Unemployed", 11);
 
 		Collection<User> users = movieReccomenderAPI.getUsers();
 		System.out.println(users);
 
 		   User homer = movieReccomenderAPI.getUserByName("Homer");
-		   movieReccomenderAPI.createRating(homer.id, 0L, 1L, 8.5);
+		   movieReccomenderAPI.createRating(homer.id, 0L, 1L, 3);
 
 		movieReccomenderAPI.deleteUser(homer.id);
 		users = movieReccomenderAPI.getUsers();

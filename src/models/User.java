@@ -30,6 +30,15 @@ public class User {
 		this.occupation = occupation;
 		this.age = age;
 	}
+	
+	public User(Long id, String firstName, String lastName, String gender, String occupation, int age) {
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.occupation = occupation;
+		this.age = age;
+	}
 
 	@Override
 	public String toString() {

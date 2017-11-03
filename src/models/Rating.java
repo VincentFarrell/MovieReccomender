@@ -12,16 +12,24 @@ public class Rating {
 	public Long id;
 	public Long userID;
 	public Long movieID;
-	public Double userRating;
+	public int userRating;
 
 	public List<Movie> rating = new ArrayList<>();
 
-	public Rating(Long userID, Long movieID, Double userRating) {
+	public Rating(Long userID, Long movieID, int userRating) {
 		this.id = counter++;
 		this.userID = userID;
 		this.movieID = movieID;
 		this.userRating = userRating;
 	}
+	
+	public Rating(Long id, Long userID, Long movieID, int userRating) {
+		this.id = id;
+		this.userID = userID;
+		this.movieID = movieID;
+		this.userRating = userRating;
+	}
+
 
 	@Override
 	public String toString() {

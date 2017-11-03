@@ -10,14 +10,14 @@ import static models.Fixtures.users;
 
 public class UserTest
 {
-  User homer = new User ("homer", "simpson", "male",  "unemployed", 40);
+  User homer = new User ("homer", "simpson", "m",  "unemployed", 40);
 
   @Test
   public void testCreate()
   {
     assertEquals ("homer",               homer.firstName);
     assertEquals ("simpson",             homer.lastName);
-    assertEquals ("male",   			 homer.gender);   
+    assertEquals ("m",   			 	 homer.gender);   
     assertEquals ("unemployed",          homer.occupation);  
     assertEquals (40,              		 homer.age); 
   }
@@ -36,14 +36,14 @@ public class UserTest
   @Test
   public void testToString()
   {
-    assertEquals ("User{" + homer.id + ", homer, simpson, male, unemployed, 40}", homer.toString());
+    assertEquals ("User{" + homer.id + ", homer, simpson, m, unemployed, 40}", homer.toString());
   }
   
   @Test
   public void testEquals()
   {
-    User homer2 = new User ("homer", "simpson", "male",  "unemployed", 40); 
-    User bart   = new User ("bart", "simpson", "male",  "unemployed", 10); 
+    User homer2 = new User ("homer", "simpson", "m",  "unemployed", 40); 
+    User bart   = new User ("bart", "simpson", "m",  "unemployed", 10); 
 
     assertEquals(homer, homer);
     assertEquals(homer, homer2);

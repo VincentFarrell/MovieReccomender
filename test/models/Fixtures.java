@@ -2,20 +2,20 @@ package models;
 
 public class Fixtures {
 	public static User[] users = {
-			new User("homer", "simpson", "male",  "unemployed", 40),
-			new User("marge", "simpson", "female", "unemployed", 35),
-			new User("lisa", "simpson", "female", "unemployed", 11),
-			new User("bart", "simpson", "male", "unemployed", 10),
-			new User("maggie", "simpson", "female", "unemployed", 3)
+			new User("homer", "simpson", "m",  "unemployed", 40),
+			new User("marge", "simpson", "f", "unemployed", 35),
+			new User("lisa", "simpson", "f", "unemployed", 11),
+			new User("bart", "simpson", "m", "unemployed", 10),
+			new User("maggie", "simpson", "f", "unemployed", 3)
 	};
 
 	public static Rating[] ratings =
 	{
-	  new Rating (0L, 0L, 8.5),
-	  new Rating (0L, 2L, 9.5),
-	  new Rating (1L, 0L, 7.5),
-	  new Rating (3L, 3L, 9.0),
-	  new Rating (2L, 1L, 8.5)
+	  new Rating (0L, 0L, 3),
+	  new Rating (0L, 2L, 4),
+	  new Rating (1L, 0L, 5),
+	  new Rating (3L, 3L, 3),
+	  new Rating (2L, 1L, 2)
 	};
 	
 	public static Movie[]Movies =
