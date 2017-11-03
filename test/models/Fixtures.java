@@ -9,20 +9,20 @@ public class Fixtures {
 			new User("maggie", "simpson", "female", "unemployed", 3)
 	};
 
-	public static Activity[] activities =
+	public static Rating[] ratings =
 	{
-	  new Activity ("walk",  "fridge", 0.001),
-	  new Activity ("walk",  "bar",    1.0),
-	  new Activity ("run",   "work",   2.2),
-	  new Activity ("walk",  "shop",   2.5),
-	  new Activity ("cycle", "school", 4.5)
+	  new Rating (0L, 0L, 8.5),
+	  new Rating (0L, 2L, 9.5),
+	  new Rating (1L, 0L, 7.5),
+	  new Rating (3L, 3L, 9.0),
+	  new Rating (2L, 1L, 8.5)
 	};
 	
-	public static Location[]locations =
+	public static Movie[]Movies =
 	{
-	  new Location(23.3f, 33.3f),
-	  new Location(34.4f, 45.2f),  
-	  new Location(25.3f, 34.3f),
-	  new Location(44.4f, 23.3f)       
+	  new Movie("The Matrix", "1999", "http://www.imdb.com/title/tt0133093/"),
+	  new Movie("Nightcrawler", "2014", "http://www.imdb.com/title/tt2872718/"),  
+	  new Movie("Alien", "1979", "http://www.imdb.com/title/tt0078748/"),
+	  new Movie("John Wick", "2014", "http://www.imdb.com/title/tt2911666/")       
 	};
 }

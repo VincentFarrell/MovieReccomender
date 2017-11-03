@@ -9,7 +9,7 @@ import com.google.common.base.Objects;
 
 public class User {
 
-	public Map<Long, Activity> activities = new HashMap<>();
+	public Map<Long, Rating> ratings = new HashMap<>();
 
 	static Long counter = 0l;
 	public Long id;
@@ -41,22 +41,72 @@ public class User {
 	public int hashCode() {
 		return Objects.hashCode(this.lastName, this.firstName, this.gender, this.occupation, this.age);
 	}
+
+	@Override
+	public boolean equals(final Object obj) {
+		if (obj instanceof User) {
+			final User other = (User) obj;
+			return Objects.equal(firstName, other.firstName)
+				&& Objects.equal(lastName, other.lastName)
+				&& Objects.equal(gender, other.gender)
+				&& Objects.equal(occupation, other.occupation)
+				&& Objects.equal(age, other.age);
+		} 
+		else {
+			return false;
+		}
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
 	
-	  @Override
-	  public boolean equals(final Object obj)
-	  {
-	    if (obj instanceof User)
-	    {
-	      final User other = (User) obj;
-	      return Objects.equal(firstName,   other.firstName) 
-	          && Objects.equal(lastName,    other.lastName)
-	          && Objects.equal(gender,      other.gender)
-	          && Objects.equal(occupation,  other.occupation)
-	      	  && Objects.equal(age,  		other.age);	
-	    }
-	    else
-	    {
-	      return false;
-	    }
-	  }
+	public String getFirstName() {
+		return firstName;
+	}
+
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	
+	public String getOccupation() {
+		return occupation;
+	}
+
+	public void setOccupation(String occupation) {
+		this.occupation = occupation;
+	}
+
+	
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
 }
