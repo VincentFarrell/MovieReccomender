@@ -1,0 +1,30 @@
+<object-stream>
+  <java.util.HashMap_-Values>
+    <outer-class>
+      <entry>
+        <long>0</long>
+        <models.User>
+          <ratings/>
+          <id>0</id>
+          <firstName>Bart</firstName>
+          <lastName>Simpson</lastName>
+          <gender>Male</gender>
+          <occupation>Unemployed</occupation>
+          <age>10</age>
+        </models.User>
+      </entry>
+      <entry>
+        <long>2</long>
+        <models.User>
+          <ratings/>
+          <id>2</id>
+          <firstName>Lisa</firstName>
+          <lastName>Simpson</lastName>
+          <gender>Female</gender>
+          <occupation>Unemployed</occupation>
+          <age>11</age>
+        </models.User>
+      </entry>
+    </outer-class>
+  </java.util.HashMap_-Values>
+</object-stream>
