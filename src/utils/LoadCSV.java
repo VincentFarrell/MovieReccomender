@@ -1,5 +1,6 @@
 package utils;
 
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,10 +12,11 @@ import models.User;
 
 public class LoadCSV {
 
-	public List<User> loadUsers(String Filename) throws IOException {
+	public List<User> loadUsers(String filename) throws IOException {
 
+		//implement scanner to read data files.
 		String delims = "[|]";
-		Scanner scanner = new Scanner(Filename);
+		Scanner scanner = new Scanner(new File(filename));
 		List<User> users = new ArrayList<User>();
 
 		while (scanner.hasNextLine()) {
@@ -44,14 +46,14 @@ public class LoadCSV {
 	@SuppressWarnings("resource")
 	public List<Movie> loadMovies(String filename) throws Exception {
 		String delims = "[|]";
-		Scanner scanner = new Scanner(filename);
+		Scanner scanner = new Scanner(new File(filename));
 
 		List<Movie> movies = new ArrayList<Movie>();
 		while (scanner.hasNextLine()) {
 			String movieDetails = scanner.nextLine();
 			String[] movieTokens = movieDetails.split(delims);
 
-			if (movieTokens.length == 4) {
+			if (movieTokens.length == 23) {
 				Long id = Long.parseLong(movieTokens[0]);
 				String title = movieTokens[1];
 				String year = movieTokens[2];
@@ -70,13 +72,13 @@ public class LoadCSV {
 
 	@SuppressWarnings("resource")
 	public List<Rating> loadRatings(String filename) throws Exception {
-		Scanner scanner = new Scanner(filename);
+		Scanner scanner = new Scanner(new File(filename));
 		String delims = "[|]";
 		List<Rating> ratings = new ArrayList<Rating>();
 		while (scanner.hasNextLine()) {
 			String ratingDetails = scanner.nextLine();
 			String[] ratingTokens = ratingDetails.split(delims);
-			if (ratingTokens.length == 3) {
+			if (ratingTokens.length == 4) {
 				Long userID = Long.parseLong(ratingTokens[0]);
 				Long movieID = Long.parseLong(ratingTokens[1]);
 				int rating = Integer.parseInt(ratingTokens[2]);

@@ -10,7 +10,8 @@ import com.google.common.base.Objects;
 public class User {
 
 	public Map<Long, Rating> ratings = new HashMap<>();
-
+	
+	//initialize variables for User
 	static Long counter = 0l;
 	public Long id;
 	public String firstName;
@@ -19,9 +20,11 @@ public class User {
 	public String occupation;
 	public int age;
 
-	public User() {
+	public User()
+	{
 	}
 
+	//constructors for User 
 	public User(String firstName, String lastName, String gender, String occupation, int age) {
 		this.id = counter++;
 		this.firstName = firstName;
@@ -39,6 +42,7 @@ public class User {
 		this.occupation = occupation;
 		this.age = age;
 	}
+
 
 	@Override
 	public String toString() {
@@ -66,6 +70,8 @@ public class User {
 		}
 	}
 
+	
+	//getters + setters for User 
 	public Long getId() {
 		return id;
 	}

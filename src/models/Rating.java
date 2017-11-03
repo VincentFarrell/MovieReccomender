@@ -8,14 +8,17 @@ import java.util.List;
 import com.google.common.base.Objects;
 
 public class Rating {
+	//initialize variables for Rating
 	static Long counter = 0l;
 	public Long id;
 	public Long userID;
 	public Long movieID;
 	public int userRating;
 
+	//create ArrayList for Movie ratings
 	public List<Movie> rating = new ArrayList<>();
 
+	//constructors for Rating
 	public Rating(Long userID, Long movieID, int userRating) {
 		this.id = counter++;
 		this.userID = userID;

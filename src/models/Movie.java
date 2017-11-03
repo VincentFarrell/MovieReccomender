@@ -5,12 +5,14 @@ import static com.google.common.base.MoreObjects.toStringHelper;
 import com.google.common.base.Objects;
 
 public class Movie {
+	//initialize variables for Movie
 	static Long counter = 0l;
 	public Long id;
 	public String title;
 	public String year;
 	public String url;
 
+	//constructors for Movie
 	public Movie(String title, String year, String url) {
 		this.id = counter++;
 		this.title = title;
@@ -25,6 +27,7 @@ public class Movie {
 		this.url = url;
 	}
 
+	
 	@Override
 	public String toString() {
 		return toStringHelper(this).addValue(id).addValue(title).addValue(year).addValue(url).toString();
@@ -49,6 +52,7 @@ public class Movie {
 	}
 
 	
+	//getters + setters for 
 	public Long getId() {
 		return id;
 	}
