@@ -52,7 +52,7 @@ public class Movie {
 	}
 
 	
-	//getters + setters for 
+	//getters + setters for Movie
 	public Long getId() {
 		return id;
 	}

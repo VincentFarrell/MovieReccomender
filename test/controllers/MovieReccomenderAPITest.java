@@ -35,8 +35,8 @@ import models.User;
 	  {
 	    assertEquals (users.length, movieReccomender.getUsers().size());
 	    movieReccomender.createUser("homer", "simpson", "male", "unemployed", 40);
-	    assertEquals (users.length+1, movieReccomender.getUsers().size());
-	    assertEquals (users[0], movieReccomender.getUserByName(users[0].firstName));
+		    assertEquals (users[0], movieReccomender.getUserByName(users[0].firstName));
+    assertEquals (users.length+1, movieReccomender.getUsers().size());
 	  }  
 
 	  @Test
