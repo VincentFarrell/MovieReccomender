@@ -35,8 +35,9 @@ public class MovieReccomenderAPI {
 	  {
 	    serializer.read();
 	    ratingsIndex = (Map<Long, Rating>) serializer.pop();
-	    nameIndex      = (Map<String, User>)   serializer.pop();
-	    userIndex       = (Map<Long, User>)     serializer.pop();
+	    nameIndex    = (Map<String, User>) serializer.pop();
+	    userIndex    = (Map<Long, User>)   serializer.pop();
+	    movieIndex    = (Map<Long, Movie>)  serializer.pop();
 	  }
 
 	  void store() throws Exception
@@ -44,6 +45,7 @@ public class MovieReccomenderAPI {
 	    serializer.push(userIndex);
 	    serializer.push(nameIndex);
 	    serializer.push(ratingsIndex);
+	    serializer.push(movieIndex);
 	    serializer.write(); 
 	  }
 
@@ -53,6 +55,7 @@ public class MovieReccomenderAPI {
 	private Map<Long, User> userIndex = new HashMap<>();
 	private Map<String, User> nameIndex = new HashMap<>();
 	private Map<Long, Rating> ratingsIndex = new HashMap<>();
+	private Map<Long, Movie>  movieIndex = new HashMap<>();
 
 	
 	public Collection<User> getUsers() {
@@ -111,7 +114,9 @@ public class MovieReccomenderAPI {
 		}
 	}
 	
-	
+	public Movie getMovie(Long id) {
+		return movieIndex.get(id);
+	}
 	
 	
 	  @SuppressWarnings("unchecked")

@@ -4,6 +4,9 @@ import static com.google.common.base.MoreObjects.toStringHelper;
 
 import java.util.HashMap;
 import java.util.Map;
+import models.Rating;
+import utils.ToJsonString;
+import controllers.MovieReccomenderAPI;
 
 import com.google.common.base.Objects;
 
@@ -45,10 +48,10 @@ public class User {
 
 
 	@Override
-	public String toString() {
-		return toStringHelper(this).addValue(id).addValue(firstName).addValue(lastName).addValue(gender)
-				.addValue(occupation).addValue(age).toString();
-	}
+	  public String toString()
+	  {
+	    return new ToJsonString(getClass(), this).toString();
+	  }
 
 	@Override
 	public int hashCode() {
