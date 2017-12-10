@@ -67,7 +67,8 @@ public class MovieReccomenderAPI {
 		nameIndex.clear();
 	}
 
-	public User createUser(String firstName, String lastName, String gender, String occupation, int age) {
+	public User createUser(String firstName, String lastName, String gender, String occupation, int age)
+	{
 		User user = new User(firstName, lastName, gender, occupation, age);
 		userIndex.put(user.id, user);
 		nameIndex.put(firstName, user);
@@ -107,12 +108,19 @@ public class MovieReccomenderAPI {
 	}
 
 	
-	public void addMovie(Long id, String title, String year, String url) {
+	public void createMovie(Long id, String title, String year, String url) {
 		Optional<Rating> rating = Optional.fromNullable(ratingsIndex.get(id));
 		if (rating.isPresent()) {
 			rating.get().rating.add(new Movie(title, year, url));
 		}
 	}
+	
+	public void addMovies (String title, String year, String url) {
+		Movie movie = new Movie(title, year, url);
+		movieIndex.put(movie.id, movie);
+	}
+	
+	
 	
 	public Movie getMovie(Long id) {
 		return movieIndex.get(id);
