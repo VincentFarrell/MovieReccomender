@@ -2,11 +2,11 @@ package models;
 
 public class Fixtures {
 	public static User[] users = {
-			new User("homer", "simpson", "m",  "unemployed", 40),
-			new User("marge", "simpson", "f", "unemployed", 35),
-			new User("lisa", "simpson", "f", "unemployed", 11),
-			new User("bart", "simpson", "m", "unemployed", 10),
-			new User("maggie", "simpson", "f", "unemployed", 3)
+			new User("homer", "simpson", "m",  "unemployed", 40, "admin"),
+			new User("marge", "simpson", "f", "unemployed", 35, "admin"),
+			new User("lisa", "simpson", "f", "unemployed", 11, "default"),
+			new User("bart", "simpson", "m", "unemployed", 10, "default"),
+			new User("maggie", "simpson", "f", "unemployed", 3, "default")
 	};
 
 	public static Rating[] ratings =
@@ -18,7 +18,7 @@ public class Fixtures {
 	  new Rating (2L, 1L, 2)
 	};
 	
-	public static Movie[]Movies =
+	public static Movie[] movies =
 	{
 	  new Movie("The Matrix", "1999", "http://www.imdb.com/title/tt0133093/"),
 	  new Movie("Nightcrawler", "2014", "http://www.imdb.com/title/tt2872718/"),  

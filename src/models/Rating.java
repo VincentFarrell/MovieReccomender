@@ -36,9 +36,15 @@ public class Rating {
 	}
 
 	@Override
-	public String toString() {
-		return new ToJsonString(getClass(), this).toString();
-	}
+	  public String toString()
+	  {
+	    return toStringHelper(this).addValue(id)
+	                               .addValue(userID)
+	                               .addValue(movieID)
+	                               .addValue(userRating)
+	                               .toString();
+	  }
+
 
 	@Override
 	public int hashCode() {

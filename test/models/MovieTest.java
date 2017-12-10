@@ -1,6 +1,6 @@
 package models;
 
-import static models.Fixtures.Movies;
+import static models.Fixtures.movies;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
 
@@ -27,13 +27,13 @@ public class MovieTest
   @Test
   public void testIds()
   {
-    assertNotEquals(Movies[0].id, Movies[1].id);
+    assertNotEquals(movies[0].id, movies[2].id);
   }
 
   @Test
   public void testToString()
   {
-    assertEquals ("Movie{" + Movies[0].id + ", The Matrix, 1999, http://www.imdb.com/title/tt0133093/}", Movies[0].toString());
-    assertEquals ("Movie{" + Movies[2].id + ", Alien, 1979, http://www.imdb.com/title/tt0078748/}", Movies[2].toString());
+    assertEquals ("Movie{" + movies[0].id + ", The Matrix, 1999, http://www.imdb.com/title/tt0133093/}", movies[0].toString());
+    assertEquals ("Movie{" + movies[2].id + ", Alien, 1979, http://www.imdb.com/title/tt0078748/}", movies[2].toString());
   }
 }

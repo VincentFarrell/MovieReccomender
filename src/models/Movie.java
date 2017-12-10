@@ -2,6 +2,9 @@ package models;
 
 import static com.google.common.base.MoreObjects.toStringHelper;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.google.common.base.Objects;
 
 import utils.ToJsonString;
@@ -13,6 +16,8 @@ public class Movie {
 	public String title;
 	public String year;
 	public String url;
+	
+	public Map<Long, Rating> ratings = new HashMap<>();
 
 	//constructors for Movie
 	public Movie(String title, String year, String url) {
@@ -33,8 +38,13 @@ public class Movie {
 	@Override
 	  public String toString()
 	  {
-	    return new ToJsonString(getClass(), this).toString();
+	    return toStringHelper(this).addValue(id)
+	                               .addValue(title)
+	                               .addValue(year)
+	                               .addValue(url)
+	                               .toString();
 	  }
+
 
 	@Override
 	public int hashCode() {
@@ -54,40 +64,4 @@ public class Movie {
 		}
 	}
 
-	
-	//getters + setters for Movie
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	
-	public String getTitle() {
-		return title;
-	}
-
-	public void setTitle(String title) {
-		this.title = title;
-	}
-
-	
-	public String getYear() {
-		return year;
-	}
-
-	public void setYear(String year) {
-		this.year = year;
-	}
-
-	
-	public String getUrl() {
-		return url;
-	}
-
-	public void setUrl(String url) {
-		this.url = url;
-	}
 }

@@ -10,7 +10,7 @@ import controllers.MovieReccomenderAPI;
 
 import com.google.common.base.Objects;
 
-public class User {
+public class User implements Comparable<User> {
 
 	public Map<Long, Rating> ratings = new HashMap<>();
 
@@ -39,19 +39,18 @@ public class User {
 		this.role = role;
 	}
 
-	public User(Long id, String firstName, String lastName, String gender, String occupation, int age) {
-		this.id = id;
-		this.firstName = firstName;
-		this.lastName = lastName;
-		this.gender = gender;
-		this.occupation = occupation;
-		this.age = age;
-	}
+	
 
-	@Override
-	public String toString() {
-		return new ToJsonString(getClass(), this).toString();
-	}
+	  public String toString()
+	  {
+	    return toStringHelper(this).addValue(id)
+	                               .addValue(firstName)
+	                               .addValue(lastName)
+	                               .addValue(gender)
+	                               .addValue(occupation) 
+	                               .addValue(age) 
+	                               .toString();
+	  }
 
 	@Override
 	public int hashCode() {
@@ -70,52 +69,10 @@ public class User {
 		}
 	}
 
-	// getters + setters for User
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
-	public String getFirstName() {
-		return firstName;
-	}
-
-	public void setFirstName(String firstName) {
-		this.firstName = firstName;
-	}
-
-	public String getLastName() {
-		return lastName;
-	}
-
-	public void setLastName(String lastName) {
-		this.lastName = lastName;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public String getOccupation() {
-		return occupation;
-	}
-
-	public void setOccupation(String occupation) {
-		this.occupation = occupation;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(int age) {
-		this.age = age;
+	
+	//return (CompareTo method for implement)
+	@Override
+	public int compareTo(User user) {
+		return this.firstName.compareTo(user.firstName);
 	}
 }

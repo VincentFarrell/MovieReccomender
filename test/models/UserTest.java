@@ -36,16 +36,7 @@ public class UserTest
   @Test
   public void testToString()
   {
-    assertEquals ("models.User\n{\n  \"firstName\": \"homer\",\n"
-        + "  \"lastName\": \"simpson\",\n"
-        + "  \"occupation\": \"unemployed\",\n"
-        + "  \"role\": \"default\",\n"
-        + "  \"gender\": \"male\",\n"
-        + "  \"ratings\": {},\n"
-        + "  \"counter\": 7,\n"
-        + "  \"id\": 6,\n"
-        + "  \"age\": 40\n"
-        + "}", homer.toString());
+    assertEquals ("User{" + homer.id + ", homer, simpson, male, unemployed, 40}", homer.toString());
   }
   
   @Test

@@ -58,11 +58,11 @@ public class LoadCSVTest {
 		
 		// Setting up a List of type user that is identical to what should output
 		// when the LoadCSVTest reads in usersTest.
-		user1 = new User(1l, "Leonard", "Hernandez", "M", "technician", 24);
-		user2 = new User(2l, "Melody", "Roberson", "F", "other", 53);
-		user3 = new User(3l, "Gregory", "Newton", "M", "writer", 23);
-		user4 = new User(4l, "Oliver", "George", "M", "technician", 24);
-		user5 = new User(5l, "Jenna", "Parker", "F", "other", 33);
+		user1 = new User("Leonard", "Hernandez", "M", "technician", 24);
+		user2 = new User("Melody", "Roberson", "F", "other", 53);
+		user3 = new User("Gregory", "Newton", "M", "writer", 23);
+		user4 = new User("Oliver", "George", "M", "technician", 24);
+		user5 = new User("Jenna", "Parker", "F", "other", 33);
 		users = new ArrayList<User>();
 		users.add(user1);
 		users.add(user2);

@@ -32,7 +32,7 @@ public class LoadCSV {
 				String gender = userTokens[4];
 				String occupation = userTokens[5];
 
-				users.add(new User(id, firstName, lastName, gender, occupation, age));
+				users.add(new User(firstName, lastName, gender, occupation, age));
 
 			} else {
 				scanner.close();
