@@ -1,4 +1,4 @@
-##Movie Recommender Assignment 2 ##
+###Movie Recommender Assignment 2 ###
 README
 
 - Author: Vincent Farrell
@@ -12,7 +12,7 @@ README
 * "Many companies use recommender systems to suggest products, information, and friends to their customers . In this assignment you will start develop a Movie recommender using existing movie data."
 * This Repository contains code for Assignment 1 - Data Structures and Algorithms. Which requires you to design a Movie Reccomender App in Java. This program uses JRE 1.8
 
-##Requirements##
+###Requirements###
 -Import ratings data from MovieLens data set*
 -Provide a simple user interface (console or GUI) that uses the API from assignment 1*
 -Provide a log in facility*
