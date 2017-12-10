@@ -5,7 +5,6 @@ import static com.google.common.base.MoreObjects.toStringHelper;
 import java.util.HashMap;
 import java.util.Map;
 import models.Rating;
-import utils.ToJsonString;
 import controllers.MovieReccomenderAPI;
 
 import com.google.common.base.Objects;

@@ -28,7 +28,7 @@ public class Main  implements ShellDependent {
 	private Shell theShell;
 
 	  public Main() throws Exception {
-		    File datastore = new File("datastore4.xml");
+		    File datastore = new File("datastoreSave.xml");
 		    Serializer serializer = new XMLSerializer(datastore);
 		    movieApi = new MovieReccomenderAPI(serializer);
 		    if (datastore.isFile()) {
@@ -40,6 +40,7 @@ public class Main  implements ShellDependent {
 	  public static void main(String[] args) throws Exception {
 		    Main main = new Main();
 		    main.movieApi.initalLoad();
+		    main.movieApi.createAdminUser("Vincent", "Farrell", "male", "Student", 19, "admin");
 		    Shell shell = ShellFactory.createConsoleShell("cm", "Welcome to MovieReccomender Console - ?help for instructions",
 		        main);
 		    shell.commandLoop();
@@ -53,6 +54,7 @@ public class Main  implements ShellDependent {
 		
 	}
 	
+	//Log in 
 	@Command(description = "Log in")
 	  public void logIn(@Param(name = "user-id") Long userID, @Param(name = "password") String password)
 	      throws IOException {

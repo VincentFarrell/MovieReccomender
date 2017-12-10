@@ -2,10 +2,13 @@ package controllers;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.TreeSet;
 
 import asg.cliche.Command;
 import asg.cliche.Param;
+import models.Movie;
+import models.Rating;
 import models.User;
 
 public class DefaultMenu {
@@ -18,27 +21,10 @@ public class DefaultMenu {
 	    this.setName(user.firstName);
 	  }
 	  
-	  @Command(description = "Get a Users detail")
-	  public void getUser(@Param(name = "user-id") Long id) {
-	    User user = movieApi.getUserByUserID(id);
-	    System.out.println(user);
-	  }
 	  
-	  @Command(description = "Add a Rating")
-	  public void addActivity(@Param(name = "user-id") Long userID,
-	      @Param(name = "movie-id") Long movieID, @Param(name = "user-rating") int userRating) {
-		  movieApi.createRating(userID, movieID, userRating);
-	  }
 	  
-
-	  public String getName() {
-	    return name;
-	  }
-	  public void setName(String name) {
-	    this.name = name;
-	  }
-	  
-	  @Command(description = "Get all users sorted by there Name")
+	//-----User Commands-----//
+	  @Command(description = "Get all users sorted by their Names (alphabetical)")
 		public void getAllUsers() {
 			TreeSet<User> sortedUsers = new TreeSet<User>();
 			sortedUsers.addAll(movieApi.getUsers());
@@ -59,4 +45,68 @@ public class DefaultMenu {
 				}
 			}
 		}
+	  
+	  @Command(description = "Get a Users detail")
+	  public void getUser(@Param(name = "user-id") Long userID) {
+	    User user = movieApi.getUserByUserID(userID);
+	    System.out.println(user);
+	  }
+	 
+	  public String getName() {
+	    return name;
+	  }
+	  public void setName(String name) {
+	    this.name = name;
+	  }
+	  
+	  
+	  
+	//-----Movie Commands----//
+	  @Command(description="Get a Movie by its ID")
+		public Movie getMovie(@Param(name="Movie Id") Long id){
+			return movieApi.getMovie(id);
+		}
+	  
+	  @Command(description="Get a List of all movies sorted by their title (alphabetical)")
+		public void getMovies(){
+			TreeSet<Movie> sortedMovies = new TreeSet<Movie>();
+			sortedMovies.addAll(movieApi.getMovies());
+			Iterator<Movie> iter = sortedMovies.iterator();
+			while(iter.hasNext()) {
+				Movie u = iter.next();
+				System.out.println(u.title);
+			}
+	  }
+		
+	  
+   //-----Rating commands----//
+	  
+	  @Command(description = "Add a Rating")
+	  public void addRating(@Param(name = "user-id") Long userID,
+	      @Param(name = "movie-id") Long movieID, @Param(name = "user-rating") int userRating) {
+		  movieApi.createRating(userID, movieID, userRating);
+	  }
+		
+	  @Command(description="Get User Ratings")
+		public Map<Long, Rating> getUserRating(@Param(name="User ID")long id){
+			return movieApi.getUserRating(id);
+		}
+		
+	  @Command(description="Get Movies Ratings")
+		public Map<Long,Rating> getMovieRating(@Param(name="Movie Id")long id)
+		{
+			return movieApi.getMovieRating(id);
+		}
+		
+	  @Command(description="Return a Rating")
+		public Rating getRating(@Param(name="Rating Id")long id){
+			return movieApi.getRating(id);
+		}
+		
+	  @Command(description="Get All Ratings")
+		public void getRatings(){
+			movieApi.getRatings();
+		}
 	}
+
+

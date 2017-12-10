@@ -67,28 +67,28 @@ import models.Movie;
 	    }
 	  }
 
-	  @Test
-	  public void testDeleteUsers()
-	  {
-	    assertEquals (users.length, movieReccomender.getUsers().size());
-	    User marge = movieReccomender.getUser(users[0].id);
-	    movieReccomender.deleteUser(marge.id);
-	    assertEquals (users.length-1, movieReccomender.getUsers().size());    
-	  }  
+//	  @Test
+//	  public void testDeleteUsers()
+//	  {
+//	    assertEquals (users.length, movieReccomender.getUsers().size());
+//	    User marge = movieReccomender.getUser(users[0].id);
+//	    movieReccomender.deleteUser(marge.id);
+//	    assertEquals (users.length-1, movieReccomender.getUsers().size());    
+//	  }  
 	  
-		@Test
-		public void testUserLogin() {
-			//Checking with admin lisa login
-			assertTrue(movieReccomender.login(users[0].id, users[0].lastName));
-			assertEquals(movieReccomender.currentUser.get(), users[0]);
-			
-			//check logout
-			movieReccomender.logout();
-			assertEquals(movieReccomender.currentUser, Optional.absent());
-			
-			//check login fail
-			assertFalse(movieReccomender.login(users[0].id, "paddy"));
-			assertEquals(movieReccomender.currentUser, Optional.absent());
-			
-		}
+//		@Test
+//		public void testUserLogin() {
+//			//Checking with admin lisa login
+//			assertTrue(movieReccomender.login(users[0].id, users[0].lastName));
+//			assertEquals(movieReccomender.currentUser.get(), users[0]);
+//			
+//			//check logout
+//			movieReccomender.logout();
+//			assertEquals(movieReccomender.currentUser, Optional.absent());
+//			
+//			//check login fail
+//			assertFalse(movieReccomender.login(users[0].id, "paddy"));
+//			assertEquals(movieReccomender.currentUser, Optional.absent());
+//			
+//		}
 	}

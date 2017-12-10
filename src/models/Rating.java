@@ -7,7 +7,6 @@ import java.util.List;
 
 import com.google.common.base.Objects;
 
-import utils.ToJsonString;
 
 public class Rating {
 	// initialize variables for Rating

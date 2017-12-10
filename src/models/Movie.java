@@ -7,10 +7,9 @@ import java.util.Map;
 
 import com.google.common.base.Objects;
 
-import utils.ToJsonString;
 
 public class Movie {
-	//initialize variables for Movie
+	//Initialise variables for Movie
 	static Long counter = 0l;
 	public Long id;
 	public String title;
